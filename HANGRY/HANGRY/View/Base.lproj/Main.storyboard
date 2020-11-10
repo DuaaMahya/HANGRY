@@ -28,7 +28,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="94"/>
+            <point key="canvasLocation" x="938" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WHU-hL-tco">
@@ -47,7 +47,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCl-Zw-IHL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+            <point key="canvasLocation" x="-754" y="94"/>
         </scene>
         <!--Add Ingredients,-->
         <scene sceneID="mWM-Y3-Rp8">
@@ -58,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K5K-Rx-wU5">
-                                <rect key="frame" x="40" y="160" width="334" height="491"/>
+                                <rect key="frame" x="40" y="160" width="334" height="521"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aEe-2w-kWs">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
@@ -94,25 +94,25 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="WIY-3p-a7w">
-                                        <rect key="frame" x="0.0" y="382" width="334" height="20"/>
+                                        <rect key="frame" x="0.0" y="382" width="334" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="py8-sp-hdP">
-                                                <rect key="frame" x="0.0" y="0.0" width="84" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7MO-P1-chq">
-                                                <rect key="frame" x="84" y="0.0" width="250" height="20"/>
+                                                <rect key="frame" x="84" y="0.0" width="250" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="PcZ-yK-PzY"/>
-                                                    <constraint firstAttribute="height" constant="20" id="zRJ-F5-DTG"/>
+                                                    <constraint firstAttribute="height" constant="50" id="zRJ-F5-DTG"/>
                                                 </constraints>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zs9-0F-av4">
-                                        <rect key="frame" x="0.0" y="422" width="334" height="69"/>
+                                        <rect key="frame" x="0.0" y="452" width="334" height="69"/>
                                         <state key="normal" image="saveButton">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
@@ -144,6 +144,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yn-bR-26A" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1707" y="94"/>
+        </scene>
+        <!--Ingredients,-->
+        <scene sceneID="Hpx-Ut-fgW">
+            <objects>
+                <viewController id="bJY-Yd-NAW" customClass="ViewController" customModule="HANGRY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2b6-os-9fb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tfu-rJ-QOb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ingredients," id="97L-dI-M2N">
+                        <barButtonItem key="backBarButtonItem" title=" " id="YJ5-Bg-NGB"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGa-Vx-2RU" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108.69565217391305" y="93.75"/>
         </scene>
     </scenes>
     <resources>

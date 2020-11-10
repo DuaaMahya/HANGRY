@@ -17,9 +17,9 @@ class TableViewCell: UITableViewCell {
         view.addSubview(ingredientImage)
         ingredientImage.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         ingredientImage.anchor(top: view.topAnchor, left: view.leftAnchor,
-                               paddingTop: 12, paddingLeft: 5,
-                               width: 30, height: 30)
-        ingredientImage.layer.cornerRadius = 30/2
+                               paddingTop: 12, paddingLeft: 10,
+                               width: 35, height: 30)
+        ingredientImage.layer.cornerRadius = 35/2
         
         view.addSubview(ingredientNameLabel)
         ingredientNameLabel.anchor(top: view.topAnchor, left: ingredientImage.rightAnchor, paddingTop: 12, paddingLeft: 10)
@@ -36,7 +36,7 @@ class TableViewCell: UITableViewCell {
         image.image = #imageLiteral(resourceName: "pickImage")
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
-        image.layer.borderWidth = 3
+        image.layer.borderWidth = 2
         image.layer.borderColor = UIColor.white.cgColor
         return image
     }()
