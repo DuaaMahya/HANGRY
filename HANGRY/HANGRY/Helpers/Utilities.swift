@@ -10,20 +10,12 @@ import Foundation
 import UIKit
 
 
-protocol ingredientDataDelegate {
+protocol dataDelegate {
     func addIngredient(_ ingredient: Ingredient)
 }
 
 protocol changeDataDelegate {
     func changeIngredient(_ ingredient: Ingredient)
-}
-
-protocol recipeDataDelegate {
-    func addIngredient(_ recipe: Recipe)
-}
-
-protocol photoDelegate {
-    func passPhoto(_ imageKeyStore: String)
 }
 
 class Utilities {

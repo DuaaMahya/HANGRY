@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IngredientTableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell {
         
     lazy var cellContainerView: UIView = {
         let view = UIView(frame: CGRect(x: 10, y: 6, width: self.frame.width, height: 70))
@@ -58,13 +58,14 @@ class IngredientTableViewCell: UITableViewCell {
     
     var getImage = UIImage()
     var getIngredientName = String()
-    var getRemainingTime = Date()
+    var getRemainingTime = String()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         ingredientImage.image = getImage
         ingredientNameLabel.text = getIngredientName
+        remainingTimeLabel.text = getRemainingTime
         
     }
     
@@ -76,21 +77,6 @@ class IngredientTableViewCell: UITableViewCell {
         addSubview(cellContainerView)
         cellContainerView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 20, paddingBottom: 5, paddingRight: 20)
         
-        if getRemainingTime != nil {
-            let reminTime = calculateRemainingTime(date: getRemainingTime)
-            remainingTimeLabel.text = reminTime
-        }
-        
-    }
-    
-    func calculateRemainingTime(date: Date) -> String {
-        let now = Date()
-        let calendar = Calendar.current.dateComponents([.day, .hour, .minute], from: now, to: date)
-        let day = calendar.day
-        let hour = calendar.hour
-        let minutes = calendar.minute
-        
-        return "\(String(describing: day!))D \(String(describing: hour!))H \(String(describing: minutes!))m"
     }
     
 

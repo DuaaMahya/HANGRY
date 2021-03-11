@@ -12,7 +12,7 @@
         <!--Ingredients,-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="IngredientsViewController" customModule="HANGRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HANGRY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCl-Zw-IHL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="94"/>
+            <point key="canvasLocation" x="-754" y="94"/>
         </scene>
         <!--Add Ingredients,-->
         <scene sceneID="mWM-Y3-Rp8">
@@ -60,30 +60,23 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K5K-Rx-wU5">
                                 <rect key="frame" x="40" y="160" width="334" height="521"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XC0-cM-HaB">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aEe-2w-kWs">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="Te9-Pr-EDA"/>
+                                            <constraint firstAttribute="height" constant="200" id="lxq-bk-3Kn"/>
                                         </constraints>
-                                        <connections>
-                                            <action selector="pickImageTapped:" destination="I1Z-Sl-FM3" eventType="touchUpInside" id="gPd-q0-JUk"/>
-                                        </connections>
-                                    </button>
+                                    </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27H-R5-Q0I">
                                         <rect key="frame" x="0.0" y="220" width="334" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="I1Z-Sl-FM3" id="vjF-df-Hv6"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YR9-GM-WmB">
                                         <rect key="frame" x="0.0" y="274" width="334" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="I1Z-Sl-FM3" id="JMK-Pp-V8i"/>
-                                        </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LBx-mz-ZS6">
                                         <rect key="frame" x="0.0" y="328" width="334" height="34"/>
@@ -92,9 +85,6 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="I1Z-Sl-FM3" id="zZK-Lt-ms9"/>
-                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Unit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I27-kY-tfh">
                                                 <rect key="frame" x="177" y="0.0" width="157" height="34"/>
@@ -135,171 +125,43 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nie-NC-sMg"/>
                         <color key="backgroundColor" name="BGColor"/>
-                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="K5K-Rx-wU5" firstAttribute="leading" secondItem="nie-NC-sMg" secondAttribute="leading" constant="40" id="Qeg-2n-YxW"/>
                             <constraint firstItem="nie-NC-sMg" firstAttribute="trailing" secondItem="K5K-Rx-wU5" secondAttribute="trailing" constant="40" id="Z9C-pU-pmN"/>
                             <constraint firstItem="K5K-Rx-wU5" firstAttribute="top" secondItem="nie-NC-sMg" secondAttribute="top" constant="20" id="pWJ-i3-0Rd"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Jhs-g8-glB" appends="YES" id="4N5-1L-0cn"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add Ingredients," id="Zc5-Jy-1X7"/>
                     <connections>
                         <outlet property="categoryTextField" destination="YR9-GM-WmB" id="Iv9-V4-K7r"/>
                         <outlet property="expireDate" destination="7MO-P1-chq" id="Eqt-7c-2rM"/>
-                        <outlet property="imagePickerButton" destination="XC0-cM-HaB" id="ISp-a6-2k8"/>
                         <outlet property="ingredientTextField" destination="27H-R5-Q0I" id="apX-m6-NxY"/>
+                        <outlet property="pickImage" destination="aEe-2w-kWs" id="kZm-fM-oXX"/>
                         <outlet property="quantityTextField" destination="2Dq-iZ-Ba0" id="Utg-Gk-59O"/>
                         <outlet property="unitTextField" destination="I27-kY-tfh" id="sFR-aJ-lIx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yn-bR-26A" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Jhs-g8-glB">
-                    <connections>
-                        <action selector="backgroundTapped:" destination="I1Z-Sl-FM3" id="FQz-Gd-IHj"/>
-                        <outlet property="delegate" destination="I1Z-Sl-FM3" id="a53-Ja-LgM"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1761" y="94"/>
+            <point key="canvasLocation" x="1707" y="94"/>
         </scene>
-        <!--Home-->
+        <!--Ingredients,-->
         <scene sceneID="Hpx-Ut-fgW">
             <objects>
-                <viewController title="Home" id="bJY-Yd-NAW" customClass="HomeViewController" customModule="HANGRY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bJY-Yd-NAW" customClass="ViewController" customModule="HANGRY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2b6-os-9fb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="tfu-rJ-QOb"/>
-                        <color key="backgroundColor" name="BGColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Recipies," id="97L-dI-M2N">
+                    <navigationItem key="navigationItem" title="Ingredients," id="97L-dI-M2N">
                         <barButtonItem key="backBarButtonItem" title=" " id="YJ5-Bg-NGB"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="0Ai-di-KxQ" kind="show" id="cZU-jE-qez"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGa-Vx-2RU" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="779"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="zeJ-zS-9Mx">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cbk-IE-Fuz" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="7Rk-Yq-5fe">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bJY-Yd-NAW" kind="relationship" relationship="rootViewController" id="UXY-MI-x3d"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="72U-2q-7w4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-10" y="779"/>
-        </scene>
-        <!--Add Recipe,-->
-        <scene sceneID="Wx8-wY-jXc">
-            <objects>
-                <viewController id="0Ai-di-KxQ" customClass="RecipeEntryViewController" customModule="HANGRY" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZYm-G4-23o">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="exw-1M-A5A">
-                                <rect key="frame" x="40" y="160" width="334" height="451"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvt-SH-J6V">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="qLb-Ks-1YY"/>
-                                        </constraints>
-                                        <connections>
-                                            <action selector="pickImageTapped:" destination="0Ai-di-KxQ" eventType="touchUpInside" id="wNH-nn-cB9"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R4g-wu-ire">
-                                        <rect key="frame" x="0.0" y="220" width="334" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="0Ai-di-KxQ" id="G6d-3C-MIZ"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U6T-O2-TXl">
-                                        <rect key="frame" x="0.0" y="274" width="334" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="0Ai-di-KxQ" id="xqB-Wc-dFo"/>
-                                        </connections>
-                                    </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="m0o-ua-Qkb">
-                                        <rect key="frame" x="0.0" y="328" width="334" height="34"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IE4-iK-IcR">
-                                                <rect key="frame" x="0.0" y="0.0" width="157" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="0Ai-di-KxQ" id="f7C-Bz-ZkO"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Unit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5r-uP-W3T">
-                                                <rect key="frame" x="177" y="0.0" width="157" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeT-Bj-9fq">
-                                        <rect key="frame" x="0.0" y="382" width="334" height="69"/>
-                                        <state key="normal" image="saveButton">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="saveButtonTapped:" destination="0Ai-di-KxQ" eventType="touchUpInside" id="r3p-ru-twq"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Zol-sj-mvd"/>
-                        <color key="backgroundColor" name="BGColor"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="Zol-sj-mvd" firstAttribute="trailing" secondItem="exw-1M-A5A" secondAttribute="trailing" constant="40" id="J18-Hx-2OW"/>
-                            <constraint firstItem="exw-1M-A5A" firstAttribute="leading" secondItem="Zol-sj-mvd" secondAttribute="leading" constant="40" id="KFb-42-xyj"/>
-                            <constraint firstItem="exw-1M-A5A" firstAttribute="top" secondItem="Zol-sj-mvd" secondAttribute="top" constant="20" id="ost-EA-eq8"/>
-                        </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Jbv-y8-zQj" appends="YES" id="P6s-aG-N8b"/>
-                        </connections>
-                    </view>
-                    <navigationItem key="navigationItem" title="Add Recipe," id="hw7-Fx-mOC"/>
-                    <connections>
-                        <outlet property="categoryTextField" destination="U6T-O2-TXl" id="wb8-bV-eK0"/>
-                        <outlet property="imagePickerButton" destination="lvt-SH-J6V" id="gcL-rp-VAw"/>
-                        <outlet property="ingredientTextField" destination="R4g-wu-ire" id="AOQ-Hv-HaS"/>
-                        <outlet property="quantityTextField" destination="IE4-iK-IcR" id="B7t-TS-cJH"/>
-                        <outlet property="unitTextField" destination="D5r-uP-W3T" id="jS0-OB-Dgb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L9c-ze-sl5" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Jbv-y8-zQj">
-                    <connections>
-                        <action selector="backgroundTapped:" destination="0Ai-di-KxQ" id="LlC-S8-uif"/>
-                        <outlet property="delegate" destination="0Ai-di-KxQ" id="0zg-UO-S8T"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="1761" y="779"/>
+            <point key="canvasLocation" x="108.69565217391305" y="93.75"/>
         </scene>
     </scenes>
     <resources>
