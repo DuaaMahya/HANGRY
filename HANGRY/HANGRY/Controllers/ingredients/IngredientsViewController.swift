@@ -7,12 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, dataDelegate  {
+class IngredientsViewController: UIViewController, ingredientDataDelegate, photoDelegate  {
+    
     
     var ingredients = [Ingredient]()
-    var ing = ["vegie oil","23"]
     
     var tableView = UITableView()
+    
+    var imageArray = [UIImage]()
+    var imageKey = String()
+    var imageStore = ImageStore()
     
     let addImage: UIImageView = {
         let image = UIImageView()
@@ -80,7 +84,7 @@ class ViewController: UIViewController, dataDelegate  {
         self.view.addSubview(tableView)
         tableView.backgroundColor = UIColor(named: "BGColor")
         tableView.separatorColor = .clear
-        tableView.register(TableViewCell.self, forCellReuseIdentifier: "ingredientCell")
+        tableView.register(IngredientTableViewCell.self, forCellReuseIdentifier: "ingredientCell")
         tableView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,
                          bottom: view.bottomAnchor, right: view.rightAnchor,
                          paddingTop: 20, paddingLeft: 0,
@@ -88,6 +92,7 @@ class ViewController: UIViewController, dataDelegate  {
         tableView.reloadData()
         
     }
+    let queue = DispatchQueue(label: "import image", attributes: [.concurrent])
     
     func saveChanges() {
         print(ingredientDocumentArchiveURL)
@@ -167,7 +172,12 @@ class ViewController: UIViewController, dataDelegate  {
         tableView.reloadData()
     }
     
+    func passPhoto(_ imageKeyStore: String) {
+        self.imageKey = imageKeyStore
+        tableView.reloadData()
+    }
     
+
     
     //MARK: - @objc
     @objc func rightNavItemTapped(_ sender: UIButton){
@@ -178,7 +188,7 @@ class ViewController: UIViewController, dataDelegate  {
 
 
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension IngredientsViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -187,10 +197,19 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath) as! IngredientTableViewCell
         let ingredient = ingredients[indexPath.row]
         cell.ingredientNameLabel.text! = ingredient.name
-        cell.remainingTimeLabel.text = "\(ingredient.expiresDate)"
+        cell.getRemainingTime = ingredient.expiresDate
+        //let image = imageArray[indexPath.row]
+        let image = imageStore.fetchImage(forKey: ingredient.ingredientKey)
+        print(ingredient.ingredientKey)
+        if image != nil {
+            cell.ingredientImage.image = image
+        }
+        
+        
+
         return cell
     }
     
@@ -211,6 +230,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
+            let ingredient = ingredients[indexPath.row]
+            imageStore.deleteImage(forKey: ingredient.ingredientKey)
             ingredients.remove(at: indexPath.row)
             saveChanges()
             tableView.deleteRows(at: [indexPath], with: .automatic)
